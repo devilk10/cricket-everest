@@ -6,19 +6,19 @@ object Cards {
         "Bouncer",
         "Outswinger",
         "Yorker",
-        "Off Break",
+        "Off_Break",
         "Inswinger",
-        "Leg Cutter",
-        "Slower Ball",
+        "Leg_Cutter",
+        "Slower_Ball",
         "Pace",
-        "Off Cutter",
+        "Off_Cutter",
         "Doosra"
     )
 
     val battingCards = listOf(
         "Straight",
         "Flick",
-        "Long On",
+        "Long_On",
         "SquareCut",
         "Sweep",
         "CoverDrive",

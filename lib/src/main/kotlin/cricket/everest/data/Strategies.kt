@@ -11,7 +11,7 @@ object ShotStrategies {
         addBadShot(Shot("SquareCut"))
         addBadShot(Shot("LegLance"))
 
-        addGoodShot(Shot("Long On"))
+        addGoodShot(Shot("Long_On"))
         addGoodShot(Shot("Sweep"))
         addGoodShot(Shot("Scoop"))
         addGoodShot(Shot("Straight"))
@@ -27,7 +27,7 @@ object ShotStrategies {
         addBadShot(Shot("Sweep"))
 
         addGoodShot(Shot("SquareCut"))
-        addGoodShot(Shot("Long On"))
+        addGoodShot(Shot("Long_On"))
         addGoodShot(Shot("Scoop"))
         addGoodShot(Shot("Straight"))
     }
@@ -39,33 +39,33 @@ object ShotStrategies {
         addGoodShot(Shot("SquareCut"))
         addGoodShot(Shot("LegLance"))
 
-        addBadShot(Shot("Long On"))
+        addBadShot(Shot("Long_On"))
         addBadShot(Shot("Sweep"))
         addBadShot(Shot("Scoop"))
         addBadShot(Shot("Straight"))
         addBadShot(Shot("CoverDrive"))
     }
 
-    val offBreakStrategy = ShotStrategy("Off Break").apply {
+    val offBreakStrategy = ShotStrategy("Off_Break").apply {
         addBadShot(Shot("Pull"))
         addBadShot(Shot("Flick"))
         addBadShot(Shot("UpperCut"))
         addBadShot(Shot("SquareCut"))
         addBadShot(Shot("LegLance"))
 
-        addGoodShot(Shot("Long On"))
+        addGoodShot(Shot("Long_On"))
         addGoodShot(Shot("Sweep"))
         addGoodShot(Shot("Scoop"))
         addGoodShot(Shot("Straight"))
         addGoodShot(Shot("CoverDrive"))
     }
 
-    val legCutterStrategy = ShotStrategy("Leg Cutter").apply {
+    val legCutterStrategy = ShotStrategy("Leg_Cutter").apply {
         addBadShot(Shot("Pull"))
         addBadShot(Shot("Flick"))
         addBadShot(Shot("UpperCut"))
         addBadShot(Shot("CoverDrive"))
-        addBadShot(Shot("Long On"))
+        addBadShot(Shot("Long_On"))
         addBadShot(Shot("Sweep"))
 
         addGoodShot(Shot("LegLance"))
@@ -82,13 +82,13 @@ object ShotStrategies {
 
         addGoodShot(Shot("Pull"))
         addGoodShot(Shot("Flick"))
-        addGoodShot(Shot("Long On"))
+        addGoodShot(Shot("Long_On"))
         addGoodShot(Shot("Scoop"))
         addGoodShot(Shot("Straight"))
         addGoodShot(Shot("CoverDrive"))
     }
 
-    val slowerBallStrategy = ShotStrategy("Slower Ball").apply {
+    val slowerBallStrategy = ShotStrategy("Slower_Ball").apply {
         addBadShot(Shot("Pull"))
         addBadShot(Shot("Flick"))
         addBadShot(Shot("UpperCut"))
@@ -96,7 +96,7 @@ object ShotStrategies {
         addBadShot(Shot("Straight"))
 
         addGoodShot(Shot("SquareCut"))
-        addGoodShot(Shot("Long On"))
+        addGoodShot(Shot("Long_On"))
         addGoodShot(Shot("Sweep"))
         addGoodShot(Shot("Scoop"))
         addGoodShot(Shot("CoverDrive"))
@@ -111,12 +111,12 @@ object ShotStrategies {
 
         addGoodShot(Shot("UpperCut"))
         addGoodShot(Shot("SquareCut"))
-        addGoodShot(Shot("Long On"))
+        addGoodShot(Shot("Long_On"))
         addGoodShot(Shot("Straight"))
         addGoodShot(Shot("CoverDrive"))
     }
 
-    val offCutterBallStrategy = ShotStrategy("Off Cutter").apply {
+    val offCutterBallStrategy = ShotStrategy("Off_Cutter").apply {
         addBadShot(Shot("Scoop"))
         addBadShot(Shot("Flick"))
         addBadShot(Shot("UpperCut"))
@@ -125,7 +125,7 @@ object ShotStrategies {
         addBadShot(Shot("CoverDrive"))
 
         addGoodShot(Shot("SquareCut"))
-        addGoodShot(Shot("Long On"))
+        addGoodShot(Shot("Long_On"))
         addGoodShot(Shot("Sweep"))
         addGoodShot(Shot("Pull"))
     }
@@ -136,7 +136,7 @@ object ShotStrategies {
         addBadShot(Shot("LegLance"))
         addBadShot(Shot("Straight"))
         addBadShot(Shot("CoverDrive"))
-        addBadShot(Shot("Long On"))
+        addBadShot(Shot("Long_On"))
 
         addGoodShot(Shot("Flick"))
         addGoodShot(Shot("SquareCut"))

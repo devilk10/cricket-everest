@@ -39,6 +39,9 @@ fun main() {
 
     if (bowlingCard !in bowlingCards || battingCard !in battingCards || shotTiming !in shotTimings) {
         println("Invalid input. Please enter valid bowling card, shot card, and shot timing.")
+        println("Valid bowling cards are $bowlingCards")
+        println("Valid batting cards are $battingCards")
+        println("Valid shot timing cards are $shotTimings")
         return
     }
 
