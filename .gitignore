@@ -1,3 +1,7 @@
 out/
 .gradle
 .idea
+# Ignore Gradle build output directory
+build
+gradle/
+local.properties
