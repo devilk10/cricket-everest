@@ -1,11 +1,30 @@
 package cricket.everest
 
+import com.ketansa.cricket.data.ShotStrategies
 import cricket.everest.data.Cards.battingCards
 import cricket.everest.data.Cards.bowlingCards
 import cricket.everest.data.Cards.shotTimings
+import cricket.everest.domain.play.Outcome
+import cricket.everest.domain.play.Predictor
+import cricket.everest.domain.play.Shot
+import cricket.everest.domain.play.ShotTiming
 import java.util.Scanner
 
 fun main() {
+    val predictor = Predictor(
+        shotStrategies = listOf(
+            ShotStrategies.yorkerStrategy,
+            ShotStrategies.offCutterBallStrategy,
+            ShotStrategies.slowerBallStrategy,
+            ShotStrategies.doosraCutterBallStrategy,
+            ShotStrategies.paceBallStrategy,
+            ShotStrategies.outSwingerStrategy,
+            ShotStrategies.inSwingerBallStrategy,
+            ShotStrategies.offBreakStrategy,
+            ShotStrategies.legCutterStrategy,
+            ShotStrategies.bouncerStrategy,
+        )
+    )
     println("Input action in following format _BOWLING_CARD _BATTING_CARD _SHOT_TIMING")
     Scanner(System.`in`)
     val input = readlnOrNull()?.split(" ") ?: return
@@ -23,5 +42,7 @@ fun main() {
         return
     }
 
-    println("Predicted Shot Outcome: SOME RANDOM OUTPUT")
+    val outcome: Outcome =
+        predictor.predictOutcomeFor(Shot(battingCard), bowlingCard, ShotTiming.valueOf(shotTiming))
+    println("Predicted Shot Outcome: $outcome")
 }
