@@ -1,4 +1,4 @@
-package cricket.everest.domain.play
+package cricket.everest.domain.predictor
 
 import cricket.everest.domain.Constants.FOUR_RUNS
 import cricket.everest.domain.Constants.MAX_RUNS

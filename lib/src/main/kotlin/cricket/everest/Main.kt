@@ -9,7 +9,7 @@ import cricket.everest.domain.commentary.Commentator
 import cricket.everest.domain.models.Outcome
 import cricket.everest.domain.models.Shot
 import cricket.everest.domain.models.ShotTiming
-import cricket.everest.domain.play.Predictor
+import cricket.everest.domain.predictor.Predictor
 import java.util.Scanner
 
 fun main() {

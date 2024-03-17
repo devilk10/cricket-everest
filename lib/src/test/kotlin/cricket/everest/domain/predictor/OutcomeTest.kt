@@ -1,4 +1,4 @@
-package cricket.everest.domain.play
+package cricket.everest.domain.predictor
 
 import cricket.everest.domain.models.Runs
 import cricket.everest.domain.models.Wicket

@@ -4,7 +4,7 @@ import cricket.everest.domain.commentary.CommentaryStrategy
 import cricket.everest.domain.models.Runs
 import cricket.everest.domain.models.Shot
 import cricket.everest.domain.models.Wicket
-import cricket.everest.domain.play.ShotStrategy
+import cricket.everest.domain.predictor.ShotStrategy
 
 object ShotStrategies {
     val yorkerStrategy = ShotStrategy("Yorker").apply {

@@ -1,4 +1,4 @@
-package cricket.everest.domain.play
+package cricket.everest.domain.predictor
 
 import cricket.everest.data.ShotStrategies
 import cricket.everest.domain.Constants
