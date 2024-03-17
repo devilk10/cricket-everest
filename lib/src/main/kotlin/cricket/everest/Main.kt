@@ -50,11 +50,8 @@ fun main() {
 
     if (readlnOrNull() == "1") {
         println("Input action in following format _BOWLING_CARD _BATTING_CARD _SHOT_TIMING")
-        val outcome = predictionInputHandler(predictor)
-        outcome?.let {
-            val commentaryOutput = commentator.getCommentaryFor(it)
-            println("Predicted Shot Outcome: $it")
-            println(commentaryOutput)
+        predictionInputHandler(predictor)?.let {
+            println("${commentator.getCommentaryFor(it)} : $it")
         }
     } else {
         print("Enter Target for the super over - ")
