@@ -7,19 +7,23 @@ import cricket.everest.domain.models.Runs
 class Inning(
     private val target: Int, private val totalBalls: Int = 6, private val totalWickets: Int = 2
 ) {
+    val score: ScoreCard = ScoreCard(runs = 0, wickets = 0, balls = 0)
     var status = InningStatus.inProgress
-    private var runs = 0
-    private var wickets = 0
-    private var balls = 0
     fun play(ballOutcome: Outcome) {
         if (status != InningStatus.inProgress) throw IllegalStateException("Inning finished")
-        balls++
-        if (ballOutcome is Runs) runs += ballOutcome.value else wickets++
+        score.balls++
+        if (ballOutcome is Runs) score.runs += ballOutcome.value else score.wickets++
 
-        status = if (runs > target) InningStatus.won
-        else if (wickets == totalWickets) InningStatus.lost
-        else if (balls == totalBalls) InningStatus.lost
+        status = if (score.runs >= target) InningStatus.won
+        else if (score.wickets == totalWickets) InningStatus.lost
+        else if (score.balls == totalBalls) InningStatus.lost
         else InningStatus.inProgress
     }
 
+}
+
+data class ScoreCard(var runs: Int, var wickets: Int, var balls: Int) {
+    override fun toString(): String {
+        return "Score - $runs/$wickets, $balls Balls"
+    }
 }
