@@ -1,13 +1,14 @@
 package cricket.everest
 
 import com.ketansa.cricket.data.ShotStrategies
+import cricket.everest.domain.commentary.Commentator
 import cricket.everest.data.Cards.battingCards
 import cricket.everest.data.Cards.bowlingCards
 import cricket.everest.data.Cards.shotTimings
-import cricket.everest.domain.play.Outcome
+import cricket.everest.domain.models.Outcome
 import cricket.everest.domain.play.Predictor
-import cricket.everest.domain.play.Shot
-import cricket.everest.domain.play.ShotTiming
+import cricket.everest.domain.models.Shot
+import cricket.everest.domain.models.ShotTiming
 import java.util.Scanner
 
 fun main() {
@@ -25,6 +26,7 @@ fun main() {
             ShotStrategies.bouncerStrategy,
         )
     )
+    val commentator = Commentator()
     println("Input action in following format _BOWLING_CARD _BATTING_CARD _SHOT_TIMING")
     Scanner(System.`in`)
     val input = readlnOrNull()?.split(" ") ?: return
@@ -47,5 +49,7 @@ fun main() {
 
     val outcome: Outcome =
         predictor.predictOutcomeFor(Shot(battingCard), bowlingCard, ShotTiming.valueOf(shotTiming))
+
+    commentator.speak(outcome, Shot(battingCard), bowlingCard, ShotTiming.valueOf(shotTiming))
     println("Predicted Shot Outcome: $outcome")
 }

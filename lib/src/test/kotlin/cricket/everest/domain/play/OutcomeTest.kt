@@ -1,5 +1,7 @@
 package cricket.everest.domain.play
 
+import cricket.everest.domain.models.Runs
+import cricket.everest.domain.models.Wicket
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

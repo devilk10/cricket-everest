@@ -1,4 +1,4 @@
-package cricket.everest.domain.play
+package cricket.everest.domain.models
 
 sealed class Outcome
 
