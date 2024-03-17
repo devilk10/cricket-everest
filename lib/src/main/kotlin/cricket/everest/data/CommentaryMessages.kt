@@ -9,4 +9,5 @@ object CommentaryMessages {
     const val convertOnesIntoTwos =  "Convert ones into twos."
     const val outOfTheGround =  "That’s massive and out of the ground."
     const val excellentRunningBetweenTheWicket =  "Excellent running between the wickets."
+    const val overThrow =  "Overthrow and given some extras"
 }

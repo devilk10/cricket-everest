@@ -1,6 +1,9 @@
-package com.ketansa.cricket.data
+package cricket.everest.data
 
+import cricket.everest.domain.commentary.CommentaryStrategy
+import cricket.everest.domain.models.Runs
 import cricket.everest.domain.models.Shot
+import cricket.everest.domain.models.Wicket
 import cricket.everest.domain.play.ShotStrategy
 
 object ShotStrategies {
@@ -142,5 +145,44 @@ object ShotStrategies {
         addGoodShot(Shot("SquareCut"))
         addGoodShot(Shot("Sweep"))
         addGoodShot(Shot("Scoop"))
+    }
+}
+
+object CommentaryStrategies {
+    val wicketStrategy = CommentaryStrategy(Wicket).apply {
+        addMessage(CommentaryMessages.edgeAndTaken)
+        addMessage(CommentaryMessages.itsAWicket)
+    }
+
+    val zeroRunsStrategy = CommentaryStrategy(Runs(0)).apply {
+        addMessage(CommentaryMessages.excellentLineAndLength)
+    }
+
+    val oneRunStrategy = CommentaryStrategy(Runs(1)).apply {
+        addMessage(CommentaryMessages.excellentRunningBetweenTheWicket)
+    }
+
+    val twoRunsStrategy = CommentaryStrategy(Runs(2)).apply {
+        addMessage(CommentaryMessages.excellentRunningBetweenTheWicket)
+        addMessage(CommentaryMessages.excellentEffortOnTheBoundary)
+        addMessage(CommentaryMessages.convertOnesIntoTwos)
+    }
+
+    val threeRunsStrategy = CommentaryStrategy(Runs(3)).apply {
+        addMessage(CommentaryMessages.excellentRunningBetweenTheWicket)
+        addMessage(CommentaryMessages.excellentEffortOnTheBoundary)
+    }
+
+    val fourRunsStrategy = CommentaryStrategy(Runs(4)).apply {
+        addMessage(CommentaryMessages.overTheFielder)
+    }
+
+    val fiveRunsStrategy = CommentaryStrategy(Runs(5)).apply {
+        addMessage(CommentaryMessages.overThrow)
+    }
+
+    val sixRunsStrategy = CommentaryStrategy(Runs(6)).apply {
+        addMessage(CommentaryMessages.outOfTheGround)
+        addMessage(CommentaryMessages.overTheFielder)
     }
 }

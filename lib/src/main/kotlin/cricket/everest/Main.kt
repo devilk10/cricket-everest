@@ -1,14 +1,15 @@
 package cricket.everest
 
-import com.ketansa.cricket.data.ShotStrategies
-import cricket.everest.domain.commentary.Commentator
 import cricket.everest.data.Cards.battingCards
 import cricket.everest.data.Cards.bowlingCards
 import cricket.everest.data.Cards.shotTimings
+import cricket.everest.data.CommentaryStrategies
+import cricket.everest.data.ShotStrategies
+import cricket.everest.domain.commentary.Commentator
 import cricket.everest.domain.models.Outcome
-import cricket.everest.domain.play.Predictor
 import cricket.everest.domain.models.Shot
 import cricket.everest.domain.models.ShotTiming
+import cricket.everest.domain.play.Predictor
 import java.util.Scanner
 
 fun main() {
@@ -26,7 +27,19 @@ fun main() {
             ShotStrategies.bouncerStrategy,
         )
     )
-    val commentator = Commentator()
+    val commentator = Commentator(
+        commentaryStrategies = listOf(
+            CommentaryStrategies.wicketStrategy,
+            CommentaryStrategies.zeroRunsStrategy,
+            CommentaryStrategies.oneRunStrategy,
+            CommentaryStrategies.twoRunsStrategy,
+            CommentaryStrategies.threeRunsStrategy,
+            CommentaryStrategies.fourRunsStrategy,
+            CommentaryStrategies.fiveRunsStrategy,
+            CommentaryStrategies.sixRunsStrategy,
+        )
+    )
+
     println("Input action in following format _BOWLING_CARD _BATTING_CARD _SHOT_TIMING")
     Scanner(System.`in`)
     val input = readlnOrNull()?.split(" ") ?: return
@@ -50,6 +63,7 @@ fun main() {
     val outcome: Outcome =
         predictor.predictOutcomeFor(Shot(battingCard), bowlingCard, ShotTiming.valueOf(shotTiming))
 
-    commentator.speak(outcome, Shot(battingCard), bowlingCard, ShotTiming.valueOf(shotTiming))
+    val commentaryOutput = commentator.getCommentaryFor(outcome)
     println("Predicted Shot Outcome: $outcome")
+    println(commentaryOutput)
 }

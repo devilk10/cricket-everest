@@ -1,6 +1,6 @@
 package cricket.everest.domain.play
 
-import com.ketansa.cricket.data.ShotStrategies
+import cricket.everest.data.ShotStrategies
 import cricket.everest.domain.models.Runs
 import cricket.everest.domain.models.Shot
 import cricket.everest.domain.models.ShotTiming

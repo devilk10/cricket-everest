@@ -26,7 +26,7 @@ class ShotStrategy(val ballType: String) {
             goodShots.contains(shot) && isBadTiming(timing) -> Runs(Random.nextInt(4))
             badShots.contains(shot) && isGoodTiming(timing) -> Runs(Random.nextInt(4))
             badShots.contains(shot) && isBadTiming(timing) -> Wicket
-            else -> throw IllegalArgumentException("Unknown shot: ${shot.name}")
+            else -> throw IllegalArgumentException("Strategy not defined for: ${shot.name}")
         }
     }
 
