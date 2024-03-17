@@ -4,7 +4,7 @@ import cricket.everest.domain.models.Runs
 import cricket.everest.domain.models.Shot
 import cricket.everest.domain.models.ShotTiming
 import cricket.everest.domain.models.Wicket
-import cricket.everest.domain.play.Constants.MAX_RUNS
+import cricket.everest.domain.Constants.MAX_RUNS
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach

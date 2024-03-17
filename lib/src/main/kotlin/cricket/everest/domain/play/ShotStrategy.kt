@@ -1,11 +1,12 @@
 package cricket.everest.domain.play
 
+import cricket.everest.domain.Constants.FOUR_RUNS
+import cricket.everest.domain.Constants.MAX_RUNS
 import cricket.everest.domain.models.Outcome
 import cricket.everest.domain.models.Runs
 import cricket.everest.domain.models.Shot
 import cricket.everest.domain.models.ShotTiming
 import cricket.everest.domain.models.Wicket
-import cricket.everest.domain.play.Constants.MAX_RUNS
 import kotlin.random.Random
 
 class ShotStrategy(val ballType: String) {
@@ -23,8 +24,8 @@ class ShotStrategy(val ballType: String) {
     fun getOutcome(shot: Shot, timing: ShotTiming): Outcome {
         return when {
             goodShots.contains(shot) && isGoodTiming(timing) -> Runs(Random.nextInt(MAX_RUNS + 1))
-            goodShots.contains(shot) && isBadTiming(timing) -> Runs(Random.nextInt(4))
-            badShots.contains(shot) && isGoodTiming(timing) -> Runs(Random.nextInt(4))
+            goodShots.contains(shot) && isBadTiming(timing) -> Runs(Random.nextInt(until = FOUR_RUNS))
+            badShots.contains(shot) && isGoodTiming(timing) -> Runs(Random.nextInt(until = FOUR_RUNS))
             badShots.contains(shot) && isBadTiming(timing) -> Wicket
             else -> throw IllegalArgumentException("Strategy not defined for: ${shot.name}")
         }
